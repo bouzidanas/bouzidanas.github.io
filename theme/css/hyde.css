@@ -81,7 +81,7 @@ html {
   color: #fff;
   margin-top: 0;
   font-family: "Abril Fatface", serif;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .sidebar-about .lead {
@@ -89,10 +89,9 @@ html {
 }
 
 .sidebar-about .profile-picture {
-  filter: drop-shadow(3px 0px 4px grey);
   margin: 0 auto;
   border-radius: 7%;
-  max-width: 5rem;
+  max-width: 6rem;
   box-shadow: 3px 0px 4px 2px grey inset;
   background: #fff;
   padding: 15px;
