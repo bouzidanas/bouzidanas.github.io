@@ -89,11 +89,13 @@ html {
 }
 
 .sidebar-about .profile-picture {
+  filter: drop-shadow(3px 0px 4px grey);
   margin: 0 auto;
   border-radius: 7%;
-  border: 2px solid #0001;
   max-width: 5rem;
-  box-shadow: 5px 10px 20px 5px gray inset
+  box-shadow: 3px 0px 4px 2px grey inset;
+  background: #fff
+  padding: 15px
 }
 
 /* Sidebar nav */
