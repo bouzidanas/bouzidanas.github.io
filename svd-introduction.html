@@ -16,11 +16,11 @@
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>bezda</title>
+		<title></title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
-		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Elise|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
 
 		<link rel="stylesheet" href="/theme/css/poole.css" />
 		<link rel="stylesheet" href="/theme/css/hyde.css" />
@@ -40,7 +40,7 @@
 			<h1>
 				<a href="/">
 					<img class="profile-picture" src="/images/sidebarprofile.png">
-					bezda
+					
 				</a>
 			</h1>
 			<p class="lead"></p>
@@ -1192,7 +1192,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Maybe the second most important algorithm of the last 100 years - coming after Fast Fourier Transform - and this algorithm is revolutionizing what we do with large data sets.</p>
+<p>Singular Value Decomposition is maybe the second most important algorithm of the last 100 years - coming after Fast Fourier Transform - and this algorithm is revolutionizing what we do with large data sets.</p>
 
 </div>
 </div>
@@ -1200,6 +1200,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Well, what is it?</p>
 <blockquote><p><strong>It is a very simple and useful matrix decomposition</strong></p>
 </blockquote>
 
@@ -1218,16 +1219,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>A couple basic takeaways to keep in mind:</p>
 <blockquote><p><strong>SVD is especially useful for when you have "big data".</strong></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>SVD is a way of extracting the most important (dominant) features.</strong></p>
+<p><strong>SVD is a way of extracting the most important (dominant) features.</strong></p>
 </blockquote>
 
 </div>
@@ -1394,7 +1388,7 @@ UU^* = U^* U = \mathbb{I}_{n\times n}.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Unitary matrices also have geometric properties such as the fact that two vectors mapped to two new new using a unitary matrix will have the distance and angle between them preserved.</p>
+<p>Unitary matrices also have geometric properties such as the fact that two vectors mapped to two new vectors using a unitary matrix will have the distance and angle between the two preserved.</p>
 
 </div>
 </div>
@@ -1411,7 +1405,7 @@ UU^* = U^* U = \mathbb{I}_{n\times n}.
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 \begin{align}
-n &gt; m \quad\quad\quad\quad\quad   &amp;&amp;  n&lt;m \quad\quad\quad\quad\quad\quad\ \\ \\
+n &gt; m : &amp;&amp;
 \Sigma = \left[\begin{matrix}
 \sigma_1 &amp; 0&amp; 0&amp;\cdots &amp;0\\
 0&amp; \sigma_2 &amp;0&amp;\cdots &amp;0\\
@@ -1421,7 +1415,9 @@ n &gt; m \quad\quad\quad\quad\quad   &amp;&amp;  n&lt;m \quad\quad\quad\quad\qua
 \hline
 0&amp;0&amp;0&amp;\cdots&amp;0\\
 \vdots 
-\end{matrix}  \right] &amp;&amp; \Sigma = \left[\begin{array}{c c c c c| c c}
+\end{matrix}  \right] \\ \notag \\
+n &lt; m :&amp;&amp;
+\Sigma = \left[\begin{array}{c c c c c| c c}
 \sigma_1 &amp; 0&amp; 0&amp;\cdots &amp;0&amp;0&amp;\cdots\\
 0&amp; \sigma_2 &amp;0&amp;\cdots &amp;0&amp;0&amp;\cdots\\
 0&amp;0&amp; \sigma_3 &amp;\cdots &amp;0&amp;0&amp;\cdots\\
@@ -1497,6 +1493,14 @@ n &gt; m \quad\quad\quad\quad\quad   &amp;&amp;  n&lt;m \quad\quad\quad\quad\qua
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>For some additional intuition, lets consider the following product $Y = \Sigma V^{*}$. The product above becomes $X = UY$. If the columns of $U$ are understood to form the unit basis of the space where all the columns of X exists, then each column of Y describe the exact mixture of these basis vectors needed to construct each corresponding column of X.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In summary,</p>
 \begin{align}
 X = U \Sigma V^*,
@@ -1523,6 +1527,60 @@ X = U \Sigma V^*,
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p><strong>For any complex valued matrix $X$, there exist a unique set of matrices $U$, $V$, and $\Sigma$ such that $U$, and $V$ are unitary and $\Sigma$ is diagonal and $X = U\Sigma V^*$.</strong></p>
 </blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Economy-SVD">The Economy SVD<a class="anchor-link" href="#The-Economy-SVD">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The nature of the sigma matrix is that it is an $n \times m$ matrix with a non-zero diagonal. However, being that it is not a square matrix, there is a section of the matrix that must contain all zeros. If $n$ is the smaller of the two dimensions, then every component with an index that exceeds $n$ is zero.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align}
+\Sigma = \left[\begin{array}{c c c c c| c c}
+\sigma_1 &amp; 0&amp; 0&amp;\cdots &amp;0&amp;0&amp;\cdots\\
+0&amp; \sigma_2 &amp;0&amp;\cdots &amp;0&amp;0&amp;\cdots\\
+0&amp;0&amp; \sigma_3 &amp;\cdots &amp;0&amp;0&amp;\cdots\\
+0&amp;0&amp;0&amp;\ddots&amp;0&amp;0&amp;\cdots\\
+0&amp;0&amp;0&amp;\cdots&amp; \sigma_n&amp;0&amp;\cdots
+\end{array}  \right]
+\end{align}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is a computational consequence to this fact. The consequence is that some columns or rows of $U$ or $V$ will only every be multiplied by zero and will never end up contributing to the construction (or decomposition) of the original matrix $X$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a result, one immediate way to reduce the complexity and computational resources used in SVD calculations is to omit the rows or columns that do not contribute to the result of the calculation from the U and V matricies. Its low hanging fruit (so to say) because its something that can be done before the product is even computed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The resulting SVD where these columns or rows are removed from either $U$ or $V$ (depending on which dimension is smaller) is called the Economy SVD.</p>
 
 </div>
 </div>
@@ -1620,6 +1678,10 @@ $$
 		div.input_area {
 			margin-left: 0.72rem;
 			margin-right: 1.48rem;
+		}
+
+		.MathJax {
+			font-size: 1.3em !important;
 		}
 		
 	</style>
