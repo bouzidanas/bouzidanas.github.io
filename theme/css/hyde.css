@@ -156,7 +156,7 @@ a.sidebar-social-item.active:focus {
   .sidebar-toc {
     position: absolute;
     right:  1rem;
-    top: 1rem;
+    top: 1.6rem;
     left:   1rem;
   }
 }

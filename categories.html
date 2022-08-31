@@ -138,6 +138,15 @@
 							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
 						}
 					}, 1000);
+
+			setTimeout(function (){ 
+				if (document.querySelectorAll("canvas.top-display").length > 0){
+					document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+					const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+					document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+					document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+				}
+			}, 5000);
 			// if (document.getElementsByClassName("top-display") != null){
 			// 	console.log(document.getElementsByClassName("top-display").length)
 			// }
