@@ -106,7 +106,7 @@ h4, h5, h6 {
 /* Body text */
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 strong {
@@ -231,7 +231,7 @@ img {
   display: block;
   max-width: 100%;
   max-height: 100%;
-  margin: 0 0 1rem;
+  margin: 0.5rem 0 0.6rem 0;
   border-radius: 5px;
 }
 
