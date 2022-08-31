@@ -182,6 +182,7 @@ a.sidebar-social-item.active:focus {
 
 @media (min-width: 64em) {
   .content {
+    max-width: 40rem;
     margin-left: 22rem;
     margin-right: 4rem;
   }
@@ -207,6 +208,7 @@ a.sidebar-social-item.active:focus {
 
 @media (min-width: 80em) {
   .layout-reverse .content {
+    max-width: 42rem;
     margin-left: 8rem;
     margin-right: 26rem;
   }
@@ -214,7 +216,7 @@ a.sidebar-social-item.active:focus {
 
 @media (min-width: 78.5rem) {
   .layout-reverse .content {
-    margin-left: calc(50% - 28rem);
+    margin-left: calc(50% - 30rem);
     margin-right: auto;
   }
 }
