@@ -67,7 +67,7 @@
 </div>		<div class="content container">
     <h1>Authors on </h1>
     <ul>
-        <li><a href="/author/anas-bouzid.html">Anas Bouzid</a> (3)</li>
+        <li><a href="/author/anas-bouzid.html">Anas Bouzid</a> (4)</li>
     </ul>
 		</div>
 
@@ -108,9 +108,38 @@
 			}
 
 			function isInViewport(element) {
-				const rect = element.getBoundingClientRect();
-				return (rect.bottom >= 0);
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.bottom >= 0);
+				}
 			}
+
+			function getCenter(element) {
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.left + 0.5*(rect.right - rect.left));
+				}
+			}
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 500);
+
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 1000);
+			// if (document.getElementsByClassName("top-display") != null){
+			// 	console.log(document.getElementsByClassName("top-display").length)
+			// }
 		</script>
 	</body>
 
@@ -139,14 +168,21 @@
 			margin-right: 1.34rem;
 		}
 
+		#sidebar-toclist {
+			display: none;
+		}
+
+		@media (min-width: 54em) {
+			#sidebar-toclist {
+				display: block;
+				opacity: 0%;
+			}
+		}
+
 		#sidebar-toclist a {
 			position: relative;
 			display: block;
 			margin-bottom: 0.7rem;
-		}
-
-		#sidebar-toclist {
-			opacity: 0%;
 		}
 
 		#sidebar-toclist.fade-in {
@@ -161,6 +197,11 @@
 
 		.MathJax {
 			font-size: 1.3em !important;
+		}
+
+		.top-display {
+			display: block;
+
 		}
 		
 	</style>

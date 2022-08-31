@@ -74,7 +74,7 @@
 					<a href="/svd-regression.html">SVD Series Part 3: Linear Regression</a>
 				</h1>
 				<p>
-					<p>Linear regression is one of the most popular modeling techniques because, in addition to revealing the relationship between variables (like correlation), it provides a simple model in the form of a linear equation that can be used to predict the value of a response variable based on data samples of the predictor variable. In this entry, we will explore how we can use SVDs to build linear regression models from data.</p>
+					<p>Linear regression is one of the most popular modeling techniques in use today. In addition to revealing the relationship between variables (like correlation), it provides a simple model in the form of a linear equation that can be used to predict the value of a response variable based on data samples of the predictor variable. In this entry, we will explore how we can use SVDs to build linear regression models from data.</p>
 				</p>
 				<a class="read-more" href="svd-regression.html">Continue reading »</a>
 			</div>
@@ -118,9 +118,38 @@
 			}
 
 			function isInViewport(element) {
-				const rect = element.getBoundingClientRect();
-				return (rect.bottom >= 0);
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.bottom >= 0);
+				}
 			}
+
+			function getCenter(element) {
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.left + 0.5*(rect.right - rect.left));
+				}
+			}
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 500);
+
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 1000);
+			// if (document.getElementsByClassName("top-display") != null){
+			// 	console.log(document.getElementsByClassName("top-display").length)
+			// }
 		</script>
 	</body>
 
@@ -149,14 +178,21 @@
 			margin-right: 1.34rem;
 		}
 
+		#sidebar-toclist {
+			display: none;
+		}
+
+		@media (min-width: 54em) {
+			#sidebar-toclist {
+				display: block;
+				opacity: 0%;
+			}
+		}
+
 		#sidebar-toclist a {
 			position: relative;
 			display: block;
 			margin-bottom: 0.7rem;
-		}
-
-		#sidebar-toclist {
-			opacity: 0%;
 		}
 
 		#sidebar-toclist.fade-in {
@@ -171,6 +207,11 @@
 
 		.MathJax {
 			font-size: 1.3em !important;
+		}
+
+		.top-display {
+			display: block;
+
 		}
 		
 	</style>

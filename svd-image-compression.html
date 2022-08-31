@@ -66,7 +66,7 @@
 	</div>
 </div>		<div class="content container">
 <div class="post-full" id="post-content">
-	<h1 class="post-title">SVD Series Part 2: Image Compression</h1>
+	<h1 class="post-title" id="post-header">SVD Series Part 2: Image Compression</h1>
 	<span class="post-date-default">Sun 13,
  Sep 2020</span>
 	<style type="text/css">/*!
@@ -1748,9 +1748,38 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 			}
 
 			function isInViewport(element) {
-				const rect = element.getBoundingClientRect();
-				return (rect.bottom >= 0);
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.bottom >= 0);
+				}
 			}
+
+			function getCenter(element) {
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.left + 0.5*(rect.right - rect.left));
+				}
+			}
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 500);
+
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 1000);
+			// if (document.getElementsByClassName("top-display") != null){
+			// 	console.log(document.getElementsByClassName("top-display").length)
+			// }
 		</script>
 	</body>
 
@@ -1779,14 +1808,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 			margin-right: 1.34rem;
 		}
 
+		#sidebar-toclist {
+			display: none;
+		}
+
+		@media (min-width: 54em) {
+			#sidebar-toclist {
+				display: block;
+				opacity: 0%;
+			}
+		}
+
 		#sidebar-toclist a {
 			position: relative;
 			display: block;
 			margin-bottom: 0.7rem;
-		}
-
-		#sidebar-toclist {
-			opacity: 0%;
 		}
 
 		#sidebar-toclist.fade-in {
@@ -1801,6 +1837,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 		.MathJax {
 			font-size: 1.3em !important;
+		}
+
+		.top-display {
+			display: block;
+
 		}
 		
 	</style>

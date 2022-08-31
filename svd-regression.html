@@ -66,7 +66,7 @@
 	</div>
 </div>		<div class="content container">
 <div class="post-full" id="post-content">
-	<h1 class="post-title">SVD Series Part 3: Linear Regression</h1>
+	<h1 class="post-title" id="post-header">SVD Series Part 3: Linear Regression</h1>
 	<span class="post-date-default">Mon 14,
  Sep 2020</span>
 	<style type="text/css">/*!
@@ -1210,19 +1210,7 @@ $$
 \begin{align*}
 \underbrace{A}_{\substack{known\\ coefficients}} \underbrace{x}_{\substack{unknown\\ variables}} = \underbrace{b}_{\substack{known\\ constants}}
 \end{align*}
-$$
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The case where $A$ is a square invertible matrix is of popular focus because $x$ is easily obtained by multiplying both sides by the inverse of $A$ (on the left). Simply put, the solution in this case is just $x = A^{-1}b$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+$$<p>The case where $A$ is a square invertible matrix is of popular focus because $x$ is easily obtained by multiplying both sides by the inverse of $A$ (on the left). Simply put, the solution in this case is just $x = A^{-1}b$.</p>
 <p>SVD allows us to generalize this solution to non-square $A$ matrices which opens up a much larger class of linear systems including many that arise in data analysis and data modeling.</p>
 
 </div>
@@ -1231,12 +1219,6 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For the moment, the focus will be on two classes of non-square matrices: underdetermined and overdetermined.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <ol>
 <li>Underdetermined is the case where the non-square matrix $A$ has dimensions $n&lt;m$. The matrix is called "underdetermined" because depending on the values inside the matrix, the situation often arises where there are infinite solutions to a linear system involving $A$.</li>
 <li>Overdetermined is the case where $A$ has dimensions $n&lt;m$. The matrix is called "overdetermined" because it provides the coefficients of a number of expressions containing the unknown components of $x$ where the number of expressions is larger than the number of unknown components. This results in the possibility that there are no solutions to the linear equation.</li>
@@ -1283,12 +1265,6 @@ A^{-1} Ax &amp;= A^{-1}b\\
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Its important to emphasize again that whether or not the pseudo-inverse will give us a solution or an approximation depends on the matrix $A$. For this reason, we use $\tilde{x}$ to denote the solution obtained using the pseudo-inverse.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Additionally, for the overdetermined case where there are no solutions to the linear equation, the approximation obtained using the pseudo-inverse constructed from the output of SVD ($U$, $V$ and $Σ$) will be the one that minimizes the least squares norm $|Ax -b |_{2}$.</p>
 
 </div>
@@ -1560,9 +1536,38 @@ This parameter is 2.0 which is the slope we set
 			}
 
 			function isInViewport(element) {
-				const rect = element.getBoundingClientRect();
-				return (rect.bottom >= 0);
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.bottom >= 0);
+				}
 			}
+
+			function getCenter(element) {
+				if(element != null){
+					const rect = element.getBoundingClientRect();
+					return (rect.left + 0.5*(rect.right - rect.left));
+				}
+			}
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 500);
+
+			setTimeout(function (){ 
+						if (document.querySelectorAll("canvas.top-display").length > 0){
+							document.getElementById("post-content").insertBefore(document.querySelectorAll("canvas.top-display")[0], document.getElementById("post-header").nextSibling);
+							const ratio = document.querySelectorAll("canvas.top-display")[0].clientHeight/document.querySelectorAll("canvas.top-display")[0].clientWidth
+							document.querySelectorAll("canvas.top-display")[0].style.width = document.getElementById("post-content").clientWidth + "px";
+							document.querySelectorAll("canvas.top-display")[0].style.height = ratio*document.querySelectorAll("canvas.top-display")[0].clientWidth + "px";
+						}
+					}, 1000);
+			// if (document.getElementsByClassName("top-display") != null){
+			// 	console.log(document.getElementsByClassName("top-display").length)
+			// }
 		</script>
 	</body>
 
@@ -1591,14 +1596,21 @@ This parameter is 2.0 which is the slope we set
 			margin-right: 1.34rem;
 		}
 
+		#sidebar-toclist {
+			display: none;
+		}
+
+		@media (min-width: 54em) {
+			#sidebar-toclist {
+				display: block;
+				opacity: 0%;
+			}
+		}
+
 		#sidebar-toclist a {
 			position: relative;
 			display: block;
 			margin-bottom: 0.7rem;
-		}
-
-		#sidebar-toclist {
-			opacity: 0%;
 		}
 
 		#sidebar-toclist.fade-in {
@@ -1613,6 +1625,11 @@ This parameter is 2.0 which is the slope we set
 
 		.MathJax {
 			font-size: 1.3em !important;
+		}
+
+		.top-display {
+			display: block;
+
 		}
 		
 	</style>
