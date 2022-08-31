@@ -35,7 +35,8 @@
 	</head>
 
 	<body class="layout-reverse theme-base-0c">
-<div class="sidebar">
+<div class="sidebar" id="sidebar-full">
+	<div class="container sidebar-toc" id="sidebar-toclist"></div>
 	<div class="container sidebar-sticky">
 		<div class="sidebar-about">
 
@@ -64,7 +65,7 @@
 		</nav> -->
 	</div>
 </div>		<div class="content container">
-<div class="post-full">
+<div class="post-full" id="post-content">
 	<h1 class="post-title">SVD Series Part 1: Introduction</h1>
 	<span class="post-date-default">Thu 10,
  Sep 2020</span>
@@ -1184,23 +1185,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
  .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
  .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
- .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">&#182;</a></h1>
+<h2 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Singular Value Decomposition is maybe the second most important algorithm of the last 100 years - coming after Fast Fourier Transform - and this algorithm is revolutionizing what we do with large data sets.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Well, what is it?</p>
 <blockquote><p><strong>It is a very simple and useful matrix decomposition</strong></p>
@@ -1209,8 +1207,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With this decomposition, we will be able to build facial recognition software which can be used to classify illness or genetic features.</p>
 <p>Singular Value Decomposition allows you to take training data from your past experience and essentially build a model and extrapolate what other situations would look like. <strong>This is the bases for Machine Learning.</strong></p>
@@ -1218,8 +1215,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A couple basic takeaways to keep in mind:</p>
 <blockquote><p><strong>SVD is especially useful for when you have "big data".</strong></p>
@@ -1229,33 +1225,29 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What it means for these features to be dominant is that they come up again and again; these are features in your data that you see over and over again; they are strongly correlated.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-does-this-thing-actually-look-like?">What does this thing actually look like?<a class="anchor-link" href="#What-does-this-thing-actually-look-like?">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Lets say we have a data matrix $X$,</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
     X = \left[ 
     \begin{matrix}
     | &amp; | &amp; | &amp; &amp; | \\
@@ -1263,36 +1255,32 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     | &amp; | &amp; | &amp; &amp; |  
     \end{matrix}
     \right],
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>where each $x_i$ is a $n\times 1$ column vector. We see that here, $X$ is an $n\times m$ matrix. Each vector $x_i$ represents some big measurement like, for example, all temperature measurements from all weather stations (on the ith day). Thus, each column is a high-dimensional measurement where the dimensions are all the different weather stations (whose measurements are independent from the measurements of other weather stations). In $X$, we have $m$ examples of each measurement. These $m$ examples may be a sequence of measurements in time (like different days) which are refered to as snapshots.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another example of the kind of data that $x_i$ may contain is the number people infected with a virus in all $n$ counties in the landlocked part of the US. And each $x_i$ contains this data for a single month and so $X$ contains this data for $m$ months.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, as far the dimensions of the data matrix goes, it is likely that $m &gt;&gt; n$ in the examples above. This isnt always the case, some data sets may have $n&gt;&gt;m$. An example could result from any high frequency measurement apparatus.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So, what we want to do with this data is find possible correlations in the data. We want to uncover possible correlations between counties or even regions of the US and virus infections or perhaps correlations between virus infections in these regions and months. The results may uncover where the virus originated and how it could have spread.</p>
 <blockquote><p><strong>We want to find the dominant features in the data set.</strong></p>
@@ -1301,8 +1289,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Singular Value Decomposition is a way of decomposing the matrix $X$ into matrices that have special properties that allow for more things that can be done to $X$ that may reveal information/features. Moreover, these special matricies, as a concequence of their properties and relationship to the data, have the potential to being meaningful as well.</p>
 <p>In this decomposition, $X$ is represented as the product of three other matrices as follows,</p>
@@ -1310,41 +1297,36 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
 X = U \Sigma V^*,
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>where $V*$ is the complex conjugate transpose of $V$. For the most part, we will only be dealing with <strong>real value data</strong> in which case the data becomes,</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
 X = U \Sigma V^T,
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Properties-of-$U,-\Sigma,$-and-$-V$">Properties of $U, \Sigma,$ and $ V$<a class="anchor-link" href="#Properties-of-$U,-\Sigma,$-and-$-V$">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By the order in the product, we can infer that</p>
 <ul>
@@ -1356,8 +1338,7 @@ X = U \Sigma V^T,
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The first and last matrices on the right side of the decomposition expression, $U$ and $V$ are extremely special matrices. They belong to class of matrices called unitary matrices.</p>
 <blockquote><p><strong>$U$ and $V$ are unitary matrices</strong></p>
@@ -1367,17 +1348,15 @@ X = U \Sigma V^T,
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
 UU^* = U^* U = \mathbb{I}_{n\times n}.
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From this, an obvious property of any unitary matrix is that its inverse is also its complex conjugate transpose and for a real-valued matrix, its inverse is just its transpose.</p>
 <blockquote><p><strong>The inverse of real-valued $U$ and $V$ are $U^T$ and $V^T$ respectively.</strong></p>
@@ -1387,26 +1366,23 @@ UU^* = U^* U = \mathbb{I}_{n\times n}.
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Unitary matrices also have geometric properties such as the fact that two vectors mapped to two new vectors using a unitary matrix will have the distance and angle between the two preserved.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Specifically, with <em>Single</em> Value Decomposition, $U$ and $V$ are not only unitary matrices but unitary matrices that result in $\Sigma$ being a diagonal matrix in order to satisfy the SVD equation. The values on the diagonal are called singular values.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
 n &gt; m : &amp;&amp;
 \Sigma = \left[\begin{matrix}
 \sigma_1 &amp; 0&amp; 0&amp;\cdots &amp;0\\
@@ -1426,39 +1402,35 @@ n &lt; m :&amp;&amp;
 0&amp;0&amp;0&amp;\ddots&amp;0&amp;0&amp;\cdots\\
 0&amp;0&amp;0&amp;\cdots&amp; \sigma_n&amp;0&amp;\cdots
 \end{array}  \right]
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The singular values $\sigma_i$ have a really important property and that is that they are all non-negative and are in decending order,</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
 \sigma_1 \geq \sigma_2 \geq \sigma_3 \geq \cdots \geq\sigma_{min\{n, m\}} \geq 0
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To better understand the importance of this property, lets consider the case where $n&gt;m$. The SVD looks like,</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
  X = \left[ 
     \begin{matrix}
     | &amp; | &amp;  &amp; | \\
@@ -1480,33 +1452,30 @@ n &lt; m :&amp;&amp;
     | &amp; | &amp;  &amp; |  
     \end{matrix}
     \right]^* = \sigma_1 u_1 v_1^* + \sigma_2 u_2 v_2^* + \cdots + \sigma_m u_m v_m^* + 0
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see that as terms are added in the SVD matrix expansion, the result approaches the original data matrix assymptotically (thanks to the decending magnitude of the $\sigma$ values). This indicates the possibility of truncating the sum while still remaining close to representing the original data. Note that each product in the sum gives an $n\times m$ matrix. We will take advantage of this property to perform image compression in the next section.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For some additional intuition, lets consider the following product $Y = \Sigma V^{*}$. The product above becomes $X = UY$. If the columns of $U$ are understood to form the unit basis of the space where all the columns of X exists, then each column of Y describe the exact mixture of these basis vectors needed to construct each corresponding column of X.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In summary,</p>
-\begin{align}
+\begin{align*}
 X = U \Sigma V^*,
-\end{align}<p>where,</p>
+\end{align*}<p>where,</p>
 <ul>
 <li>$U$ is an $n\times n$ square unitary matrix</li>
 <li>$\Sigma$ is an $n\times m$ diagonal matrix with diagonal elements $\sigma_i$ such that $\sigma_1 \geq \sigma_2  \geq \cdots \geq \sigma_{min\{n, m\}} \geq 0$</li>
@@ -1516,16 +1485,14 @@ X = U \Sigma V^*,
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After learning of the properties that $U$, $V$, and $\Sigma$ must have, one might question whether such matrices that satisfy the decomposition equation actually exists for every given data set. It turns out that not only do these matrices exist for all complex matrices $X$ (ie $X \in \mathbb{C}_{n\times m}$), the decomposition is unique as well.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p><strong>For any complex valued matrix $X$, there exist a unique set of matrices $U$, $V$, and $\Sigma$ such that $U$, and $V$ are unitary and $\Sigma$ is diagonal and $X = U\Sigma V^*$.</strong></p>
 </blockquote>
@@ -1533,25 +1500,22 @@ X = U \Sigma V^*,
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Economy-SVD">The Economy SVD<a class="anchor-link" href="#The-Economy-SVD">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The nature of the sigma matrix is that it is an $n \times m$ matrix with a non-zero diagonal. However, being that it is not a square matrix, there is a section of the matrix that must contain all zeros. If $n$ is the smaller of the two dimensions, then every component with an index that exceeds $n$ is zero.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-\begin{align}
+\begin{align*}
 \Sigma = \left[\begin{array}{c c c c c| c c}
 \sigma_1 &amp; 0&amp; 0&amp;\cdots &amp;0&amp;0&amp;\cdots\\
 0&amp; \sigma_2 &amp;0&amp;\cdots &amp;0&amp;0&amp;\cdots\\
@@ -1559,71 +1523,27 @@ X = U \Sigma V^*,
 0&amp;0&amp;0&amp;\ddots&amp;0&amp;0&amp;\cdots\\
 0&amp;0&amp;0&amp;\cdots&amp; \sigma_n&amp;0&amp;\cdots
 \end{array}  \right]
-\end{align}
+\end{align*}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There is a computational consequence to this fact. The consequence is that some columns or rows of $U$ or $V$ will only every be multiplied by zero and will never end up contributing to the construction (or decomposition) of the original matrix $X$.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As a result, one immediate way to reduce the complexity and computational resources used in SVD calculations is to omit the rows or columns that do not contribute to the result of the calculation from the U and V matricies. Its low hanging fruit (so to say) because its something that can be done before the product is even computed.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The resulting SVD where these columns or rows are removed from either $U$ or $V$ (depending on which dimension is smaller) is called the Economy SVD.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="SVD-for-Linear-Regression">SVD for Linear Regression<a class="anchor-link" href="#SVD-for-Linear-Regression">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-system-of-equations">Linear system of equations<a class="anchor-link" href="#Linear-system-of-equations">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$
-\begin{align}
-\underbrace{A}_{\substack{known\\ coefficients}} \underbrace{x}_{\substack{unknown\\ variables}} = \underbrace{b}_{\substack{known\\ constants}}
-\end{align}
-$$
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The case where $A$ is a square invertible matrix is of popular focus because $x$ is easily obtained by multiplying both sides by the inverse of $A$ (on the left). Simply put, the solution in this case is just $x = A^{-1}b$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Singular value decomposition allows us to generalize this to non-square $A$ matrices.</p>
 
 </div>
 </div>
@@ -1662,6 +1582,48 @@ $$
 
 </div>
 		</div>
+
+		<script type="text/javascript">
+			if (document.getElementById("post-content") != null){
+				let section_headers = document.getElementById("post-content").querySelectorAll("h2");
+
+				for (header of section_headers){
+					const header_link = document.createElement("a");
+					header_link.innerText = header.innerText.toUpperCase();
+					header_link.href = header.lastChild.href;
+					document.getElementById("sidebar-toclist").append(header_link);
+				}
+
+				window.addEventListener('scroll', function (e){
+					if (!isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-out")
+						document.getElementById("sidebar-toclist").classList.add("fade-in")
+					}
+					else {
+						document.getElementById("sidebar-toclist").classList.remove("fade-in")
+						document.getElementById("sidebar-toclist").classList.add("fade-out")
+					}
+				}, {passive: true});
+
+				document.getElementById("sidebar-full").onmouseover = function (){
+					if (isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-out");
+						document.getElementById("sidebar-toclist").classList.add("fade-in");
+					}
+				}
+				document.getElementById("sidebar-full").onmouseout = function (){
+					if (isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-in");
+						document.getElementById("sidebar-toclist").classList.add("fade-out");
+					}
+				}
+			}
+
+			function isInViewport(element) {
+				const rect = element.getBoundingClientRect();
+				return (rect.bottom >= 0);
+			}
+		</script>
 	</body>
 
 	<style type="text/css">/*!
@@ -1670,7 +1632,7 @@ $$
 		*/
 
 		.prompt {
-			min-width: 12.5ex;
+			min-width: 11ex;
 		}
 		
 		div.output_area pre {
@@ -1678,8 +1640,35 @@ $$
 		}
 
 		div.input_area {
-			margin-left: 0.72rem;
+			margin-left: 0.2rem;
 			margin-right: 1.48rem;
+		}
+
+		div.output_subarea {
+			padding: 0;
+			max-width: 100%;
+			margin-left: 0.2rem;
+			margin-right: 1.34rem;
+		}
+
+		#sidebar-toclist a {
+			position: relative;
+			display: block;
+			margin-bottom: 0.7rem;
+		}
+
+		#sidebar-toclist {
+			opacity: 0%;
+		}
+
+		#sidebar-toclist.fade-in {
+			opacity: 100%;
+			transition: opacity 1s;
+		}
+
+		#sidebar-toclist.fade-out {
+			opacity: 0%;
+			transition: opacity 1s;
 		}
 
 		.MathJax {

@@ -35,7 +35,8 @@
 	</head>
 
 	<body class="layout-reverse theme-base-0c">
-<div class="sidebar">
+<div class="sidebar" id="sidebar-full">
+	<div class="container sidebar-toc" id="sidebar-toclist"></div>
 	<div class="container sidebar-sticky">
 		<div class="sidebar-about">
 
@@ -73,7 +74,7 @@
 					<a href="/svd-regression.html">SVD Series Part 3: Linear Regression</a>
 				</h1>
 				<p>
-					<p>Many physical systems may be represented as a linear system of equations. Regression is an important statistical tool to relate variables to one another</p>
+					<p>Linear regression is one of the most popular modeling techniques because, in addition to revealing the relationship between variables (like correlation), it provides a simple model in the form of a linear equation that can be used to predict the value of a response variable based on data samples of the predictor variable. In this entry, we will explore how we can use SVDs to build linear regression models from data.</p>
 				</p>
 				<a class="read-more" href="svd-regression.html">Continue reading »</a>
 			</div>
@@ -103,6 +104,48 @@
 			</div>
 	</div>
 		</div>
+
+		<script type="text/javascript">
+			if (document.getElementById("post-content") != null){
+				let section_headers = document.getElementById("post-content").querySelectorAll("h2");
+
+				for (header of section_headers){
+					const header_link = document.createElement("a");
+					header_link.innerText = header.innerText.toUpperCase();
+					header_link.href = header.lastChild.href;
+					document.getElementById("sidebar-toclist").append(header_link);
+				}
+
+				window.addEventListener('scroll', function (e){
+					if (!isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-out")
+						document.getElementById("sidebar-toclist").classList.add("fade-in")
+					}
+					else {
+						document.getElementById("sidebar-toclist").classList.remove("fade-in")
+						document.getElementById("sidebar-toclist").classList.add("fade-out")
+					}
+				}, {passive: true});
+
+				document.getElementById("sidebar-full").onmouseover = function (){
+					if (isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-out");
+						document.getElementById("sidebar-toclist").classList.add("fade-in");
+					}
+				}
+				document.getElementById("sidebar-full").onmouseout = function (){
+					if (isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-in");
+						document.getElementById("sidebar-toclist").classList.add("fade-out");
+					}
+				}
+			}
+
+			function isInViewport(element) {
+				const rect = element.getBoundingClientRect();
+				return (rect.bottom >= 0);
+			}
+		</script>
 	</body>
 
 	<style type="text/css">/*!
@@ -111,7 +154,7 @@
 		*/
 
 		.prompt {
-			min-width: 12.5ex;
+			min-width: 11ex;
 		}
 		
 		div.output_area pre {
@@ -119,8 +162,35 @@
 		}
 
 		div.input_area {
-			margin-left: 0.72rem;
+			margin-left: 0.2rem;
 			margin-right: 1.48rem;
+		}
+
+		div.output_subarea {
+			padding: 0;
+			max-width: 100%;
+			margin-left: 0.2rem;
+			margin-right: 1.34rem;
+		}
+
+		#sidebar-toclist a {
+			position: relative;
+			display: block;
+			margin-bottom: 0.7rem;
+		}
+
+		#sidebar-toclist {
+			opacity: 0%;
+		}
+
+		#sidebar-toclist.fade-in {
+			opacity: 100%;
+			transition: opacity 1s;
+		}
+
+		#sidebar-toclist.fade-out {
+			opacity: 0%;
+			transition: opacity 1s;
 		}
 
 		.MathJax {

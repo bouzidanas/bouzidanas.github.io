@@ -5,10 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
+		<link rel="shortcut icon" href="/favicon.ico">
+
 		<!-- Metadata -->
 			<meta name="description" content="" />
 			<meta property="og:description" content="" />
-			<meta property="og:title" content="bezda" />
+			<meta property="og:title" content="" />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="" />
 		<meta property="og:image" content="/images/sidebarprofile.png" />
@@ -16,11 +18,11 @@
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>bezda - Articles by Anas Bouzid</title>
+		<title> - Articles by Anas Bouzid</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
-		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Elise|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
 
 		<link rel="stylesheet" href="/theme/css/poole.css" />
 		<link rel="stylesheet" href="/theme/css/hyde.css" />
@@ -33,14 +35,15 @@
 	</head>
 
 	<body class="layout-reverse theme-base-0c">
-<div class="sidebar">
+<div class="sidebar" id="sidebar-full">
+	<div class="container sidebar-toc" id="sidebar-toclist"></div>
 	<div class="container sidebar-sticky">
 		<div class="sidebar-about">
 
 			<h1>
 				<a href="/">
 					<img class="profile-picture" src="/images/sidebarprofile.png">
-					bezda
+					
 				</a>
 			</h1>
 			<p class="lead"></p>
@@ -49,7 +52,7 @@
 		</div>
 			<ul class="sidebar-nav">
 			</ul>
-		<nav class="sidebar-social">
+		<!-- <nav class="sidebar-social">
 					<a class="sidebar-social-item" href="#" target="_blank">
 						<i class="fa fa-You can add links in your config file"></i>
 					</a>
@@ -59,7 +62,7 @@
 			<a class="sidebar-social-item" href="/">
 				<i class="fa fa-rss"></i>
 			</a>
-		</nav>
+		</nav> -->
 	</div>
 </div>		<div class="content container">
 	<div class="posts">
@@ -71,7 +74,7 @@
 					<a href="/svd-regression.html">SVD Series Part 3: Linear Regression</a>
 				</h1>
 				<p>
-					<p>Many physical systems may be represented as a linear system of equations. Regression is an important statistical tool to relate variables to one another</p>
+					<p>Linear regression is one of the most popular modeling techniques because, in addition to revealing the relationship between variables (like correlation), it provides a simple model in the form of a linear equation that can be used to predict the value of a response variable based on data samples of the predictor variable. In this entry, we will explore how we can use SVDs to build linear regression models from data.</p>
 				</p>
 				<a class="read-more" href="svd-regression.html">Continue reading »</a>
 			</div>
@@ -101,6 +104,48 @@
 			</div>
 	</div>
 		</div>
+
+		<script type="text/javascript">
+			if (document.getElementById("post-content") != null){
+				let section_headers = document.getElementById("post-content").querySelectorAll("h2");
+
+				for (header of section_headers){
+					const header_link = document.createElement("a");
+					header_link.innerText = header.innerText.toUpperCase();
+					header_link.href = header.lastChild.href;
+					document.getElementById("sidebar-toclist").append(header_link);
+				}
+
+				window.addEventListener('scroll', function (e){
+					if (!isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-out")
+						document.getElementById("sidebar-toclist").classList.add("fade-in")
+					}
+					else {
+						document.getElementById("sidebar-toclist").classList.remove("fade-in")
+						document.getElementById("sidebar-toclist").classList.add("fade-out")
+					}
+				}, {passive: true});
+
+				document.getElementById("sidebar-full").onmouseover = function (){
+					if (isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-out");
+						document.getElementById("sidebar-toclist").classList.add("fade-in");
+					}
+				}
+				document.getElementById("sidebar-full").onmouseout = function (){
+					if (isInViewport(section_headers[0])){
+						document.getElementById("sidebar-toclist").classList.remove("fade-in");
+						document.getElementById("sidebar-toclist").classList.add("fade-out");
+					}
+				}
+			}
+
+			function isInViewport(element) {
+				const rect = element.getBoundingClientRect();
+				return (rect.bottom >= 0);
+			}
+		</script>
 	</body>
 
 	<style type="text/css">/*!
@@ -109,7 +154,7 @@
 		*/
 
 		.prompt {
-			min-width: 12.5ex;
+			min-width: 11ex;
 		}
 		
 		div.output_area pre {
@@ -117,8 +162,39 @@
 		}
 
 		div.input_area {
-			margin-left: 0.72rem;
+			margin-left: 0.2rem;
 			margin-right: 1.48rem;
+		}
+
+		div.output_subarea {
+			padding: 0;
+			max-width: 100%;
+			margin-left: 0.2rem;
+			margin-right: 1.34rem;
+		}
+
+		#sidebar-toclist a {
+			position: relative;
+			display: block;
+			margin-bottom: 0.7rem;
+		}
+
+		#sidebar-toclist {
+			opacity: 0%;
+		}
+
+		#sidebar-toclist.fade-in {
+			opacity: 100%;
+			transition: opacity 1s;
+		}
+
+		#sidebar-toclist.fade-out {
+			opacity: 0%;
+			transition: opacity 1s;
+		}
+
+		.MathJax {
+			font-size: 1.3em !important;
 		}
 		
 	</style>

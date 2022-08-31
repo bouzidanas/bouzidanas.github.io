@@ -152,6 +152,14 @@ a.sidebar-social-item.active:focus {
   }
 }
 
+@media (min-width: 54em) {
+  .sidebar-toc {
+    position: absolute;
+    right:  1rem;
+    top: 1rem;
+    left:   1rem;
+  }
+}
 
 /* Container
  *
