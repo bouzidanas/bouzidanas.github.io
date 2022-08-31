@@ -41,6 +41,11 @@ html {
 }
 @media (min-width: 64em) {
   html {
+    font-size: 18px;
+  }
+}
+@media (min-width: 80em) {
+  html {
     font-size: 20px;
   }
 }
@@ -182,7 +187,7 @@ a.sidebar-social-item.active:focus {
 
 @media (min-width: 64em) {
   .content {
-    max-width: 40rem;
+    max-width: 42rem;
     margin-left: 22rem;
     margin-right: 4rem;
   }
@@ -201,7 +206,7 @@ a.sidebar-social-item.active:focus {
     right: 0;
   }
   .layout-reverse .content {
-    margin-left: 3rem;
+    margin-left: 5rem;
     margin-right: 21rem;
   }
 }
@@ -209,12 +214,12 @@ a.sidebar-social-item.active:focus {
 @media (min-width: 80em) {
   .layout-reverse .content {
     max-width: 42rem;
-    margin-left: 8rem;
-    margin-right: 26rem;
+    margin-left: 4.4rem;
+    margin-right: 22.2rem;
   }
 }
 
-@media (min-width: 78.5rem) {
+@media (min-width: 87em) {
   .layout-reverse .content {
     margin-left: calc(50% - 30rem);
     margin-right: auto;
