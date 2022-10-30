@@ -33,7 +33,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/bezda-analytics/bezda-analytics.github.io/tree/main/">
+  <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/">
     <img src="images/logo.png" alt="Logo" width="196" height="106">
   </a>
 
@@ -42,12 +42,12 @@
   <p align="center">
     Generate plots of Golden Boot winners' running goal totals
     <br />
-    <a href="https://github.com/bezda-analytics/bezda-analytics.github.io/tree/main/golden-boot-v1/README.md"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://bezda-analytics.github.io/golden-boot-v1/Haaland/">View Demo</a>
+    <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/">View Demo</a>
     ·
-    <a href="https://github.com/bezda-analytics/bezda-analytics.github.io/blob/main/golden-boot-v1/Base/Golden-Boot-Plot-Generator.ipynb">View Plot Generator</a>
+    <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base/Golden-Boot-Plot-Generator.ipynb">View Plot Generator</a>
   </p>
 </div>
 
@@ -85,14 +85,14 @@
 ## About The Project
 
 <div align="center">
-  <a href="https://github.com/bezda-analytics/bezda-analytics.github.io/tree/main/golden-boot-v1/images/project-screenshot.png">
+  <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/images/project-screenshot.png">
     <img src="images/project-screenshot.png" alt="project-screenshot.png">
   </a>
 </div>
 <br />
 <br />
 
-<p align="center"> ⯈ <a href="https://bezda-analytics.github.io/golden-boot-v1/Haaland/" >View Demo</a> ⯇</p><br />
+<p align="center"> ⯈ <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/" >View Demo</a> ⯇</p><br />
 
  This Jupyter notebook project obtains data (from [FBRef.com](https://fbref.com/en/comps/9/Premier-League-Stats)) on the goals scored by each Premier League Golden Boot winner during the season the winner won the award. Then the data is used to generate running totals/cumulative sums plots so that the winner's goal scoring trajectories can be compared. <br />
 
@@ -118,7 +118,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-All you need from this repository to generate these plots are the files in the [\Base](https://github.com/bezda-analytics/bezda-analytics.github.io/tree/main/golden-boot-v1/Base) folder of this repository. This folder contains a javascript file that adds interactivity to the plot, a static css file for styling, and most importantly, **a (Jupyter) notebook that generates the plot** (specifically, an html file containing the plot) and a custom css file for data-dependent styling of plot elements.
+All you need from this repository to generate these plots are the files in the [\Base](https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base) folder of this repository. This folder contains a javascript file that adds interactivity to the plot, a static css file for styling, and most importantly, **a (Jupyter) notebook that generates the plot** (specifically, an html file containing the plot) and a custom css file for data-dependent styling of plot elements.
 
 ## Prerequisites
 
@@ -185,7 +185,7 @@ sudo apt-get install python3.8
 1. Clone the repo
 
    ```
-   git clone https://github.com/bezda-analytics/bezda-analytics.github.io
+   git clone https://github.com/bouzidanas/bouzidanas.github.io/
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -276,7 +276,7 @@ The `additional_player` parameters allow for adding the stats/data of an additio
 Example:
 
 <p align="left">
-  <a href="https://github.com/bezda-analytics/bezda-analytics.github.io/tree/main/golden-boot-v1/images/fbref-id-example.png">
+  <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/images/fbref-id-example.png">
       <img src="images/fbref-id-example.png" alt="fbref-id-example.png">
   </a>
 </p>
@@ -315,7 +315,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 bezda - bezda.management@gmail.com
 
-Project Link: [https://github.com/bezda-analytics/bezda-analytics.github.io](https://github.com/bezda-analytics/bezda-analytics.github.io)
+Project Link: [https://github.com/bouzidanas/bouzidanas.github.io](https://github.com/bezda-analytics/bezda-analytics.github.io)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
