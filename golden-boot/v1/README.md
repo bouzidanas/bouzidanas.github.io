@@ -37,7 +37,7 @@
     <img src="images/logo.png" alt="Logo" width="140">
   </a>
 
-<h3 align="center">Golden Boot Plot Generator V1</h3>
+<h3 align="center">Golden Boot Plot Generator v1</h3>
 
   <p align="center">
     Generate plots of Golden Boot winners' running goal totals
