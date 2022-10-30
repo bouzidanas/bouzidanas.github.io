@@ -34,7 +34,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/">
-    <img src="images/logo.png" alt="Logo" width="196" height="106">
+    <img src="images/logo.png" alt="Logo" width="196">
   </a>
 
 <h3 align="center">Golden Boot Plot Generator V1</h3>
