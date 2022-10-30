@@ -1,5 +1,4 @@
 let allDim = false;
-let pageScale = 0.81;
 
 function dimAllLines(){
     const lines = document.querySelectorAll(".line path");
@@ -204,14 +203,11 @@ function addLabels(){
 }
 
 function pageReadjust(){
-    document.body.style.transform = 'scale(' + pageScale + ')';
-
     var body = document.body;
     var html = document.documentElement;
 
     var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-    document.body.style.marginTop =(document.body.getBoundingClientRect().height - height)/3 +'px';
     document.body.style.marginBottom = (document.body.getBoundingClientRect().height - height)/2 +'px';
 }
 

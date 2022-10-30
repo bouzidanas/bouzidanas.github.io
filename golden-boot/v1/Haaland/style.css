@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
-  --xaxes-color: white;
-  --yaxes-color: white;
+  --xaxes-color: #8d8682;
+  --yaxes-color: #8d8682;
   --gradient-color: #2a3334;
   --Blackburn-Rovers-dark: #009EE0;
   --Blackburn-Rovers-light: #FFFFFF;
@@ -40,7 +40,7 @@ g.Alan-Shearer path {
 }
 
 div.Alan-Shearer {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -108,7 +108,7 @@ g.Chris-Sutton path {
 }
 
 div.Chris-Sutton {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -166,7 +166,7 @@ g.Dion-Dublin path {
 }
 
 div.Dion-Dublin {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -224,7 +224,7 @@ g.Michael-Owen path {
 }
 
 div.Michael-Owen {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -292,7 +292,7 @@ g.Dwight-Yorke path {
 }
 
 div.Dwight-Yorke {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -350,7 +350,7 @@ g.Jimmy-Floyd-Hasselbaink path {
 }
 
 div.Jimmy-Floyd-Hasselbaink {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -408,7 +408,7 @@ g.Kevin-Phillips path {
 }
 
 div.Kevin-Phillips {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -476,7 +476,7 @@ g.Thierry-Henry path {
 }
 
 div.Thierry-Henry {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -534,7 +534,7 @@ g.Ruud-van-Nistelrooy path {
 }
 
 div.Ruud-van-Nistelrooy {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -622,7 +622,7 @@ g.Didier-Drogba path {
 }
 
 div.Didier-Drogba {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -680,7 +680,7 @@ g.Cristiano-Ronaldo path {
 }
 
 div.Cristiano-Ronaldo {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -738,7 +738,7 @@ g.Nicolas-Anelka path {
 }
 
 div.Nicolas-Anelka {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -806,7 +806,7 @@ g.Carlos-Tevez path {
 }
 
 div.Carlos-Tevez {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -864,7 +864,7 @@ g.Dimitar-Berbatov path {
 }
 
 div.Dimitar-Berbatov {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -922,7 +922,7 @@ g.Robin-van-Persie path {
 }
 
 div.Robin-van-Persie {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -990,7 +990,7 @@ g.Luis-Suárez path {
 }
 
 div.Luis-Suárez {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1048,7 +1048,7 @@ g.Sergio-Agüero path {
 }
 
 div.Sergio-Agüero {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1106,7 +1106,7 @@ g.Harry-Kane path {
 }
 
 div.Harry-Kane {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1174,7 +1174,7 @@ g.Mohamed-Salah path {
 }
 
 div.Mohamed-Salah {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1232,7 +1232,7 @@ g.Pierre-Emerick-Aubameyang path {
 }
 
 div.Pierre-Emerick-Aubameyang {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1290,7 +1290,7 @@ g.Sadio-Mané path {
 }
 
 div.Sadio-Mané {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1358,7 +1358,7 @@ g.Jamie-Vardy path {
 }
 
 div.Jamie-Vardy {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1436,7 +1436,7 @@ g.Son-Heung-min path {
 }
 
 div.Son-Heung-min {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1494,7 +1494,7 @@ g.Erling-Haaland path {
 }
 
 div.Erling-Haaland {
-  color: white;
+  color: #8d8682;
  -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;

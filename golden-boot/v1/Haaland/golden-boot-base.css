@@ -12,9 +12,10 @@ body {
     font-family: "Nunito", sans-serif;
     font-weight: bold;
     font-size: .7rem;
-    margin: 0px;
+    margin-top: -73px;
     min-width: 1100px;
     overflow: auto;
+    transform: scale(0.81);
   }
 
   /* Image elements and gradient overlays -------------------------- */
@@ -47,11 +48,11 @@ body {
   }
 
   div.gradient.diag {
-    background: linear-gradient(to bottom right, var(--gradient-color) 10%,transparent 30%, transparent 35%, var(--gradient-color) 90%);
+    background: linear-gradient(to bottom right, var(--gradient-color) 10%,transparent 25%, var(--gradient-color) 70%);
   }
 
   div.gradient.horizontal {
-    background: linear-gradient(to right, var(--gradient-color) 8%,transparent 45%, transparent 60%, var(--gradient-color) 98%);
+    background: linear-gradient(to right, var(--gradient-color) 10%,transparent 45%, transparent 60%, var(--gradient-color) 98%);
   }
 
   div.gradient.vertical {
@@ -169,6 +170,7 @@ body {
 
   /* plot horizontal grid lines */
   g#matplotlib\.axis_2 > g > g:first-child > path {
+    stroke-opacity: 0.15 !important;
     stroke:var(--yaxes-color) !important;
   }
 
@@ -216,5 +218,5 @@ body {
     padding: 0;
     width: fit-content;
     font-size: 5ch;
-    color: white;
+    color: var(--xaxes-color);
   }
