@@ -102,11 +102,11 @@
 
 ### Built With
 
-* [![Jupyter][Jupyter.org]][Jupyter-url]
-* [![pandas][pandas-shield]][pandas-url]
-* [![matplotlib][matplotlib.org]][matplotlib-url]
-* [![CSS3][CSS3-shield]][CSS3-url]
-* [![Javascript][Javascript-shield]][Javascript-url]
+[![Jupyter][Jupyter.org]][Jupyter-url]
+[![pandas][pandas-shield]][pandas-url]
+[![matplotlib][matplotlib.org]][matplotlib-url]
+[![CSS3][CSS3-shield]][CSS3-url]
+[![Javascript][Javascript-shield]][Javascript-url]
 
 
 
@@ -118,7 +118,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-All you need from this repository to generate these plots are the files in the [\Base](https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base) folder of this repository. This folder contains a javascript file that adds interactivity to the plot, a static css file for styling, and most importantly, **a (Jupyter) notebook that generates the plot** (specifically, an html file containing the plot) and a custom css file for data-dependent styling of plot elements.
+All you need from this repository to generate these plots are the files in the [\Base](https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base) folder of this repository. This folder contains a javascript file that adds interactivity to the plot, a static css file for styling, and most importantly, **a (Jupyter) notebook that generates the plot** (specifically, an html file containing the plot and a custom css file for data-dependent styling of plot elements).
 
 ## Prerequisites
 
@@ -136,11 +136,11 @@ OR
 1. [Anaconda](#quick-setup)
 2. [Conda](#quick-setup) (optional, recommended)
 
-You can install all of these individually by following the steps in the links above. 
+You can install all of these individually by following the steps in the links below. 
 
 Alternatively, you can get most if not all of these things by installing anaconda (or miniconda). If the latter option is chosen, installing the conda package manager is recommended.
 
-### Quick setup
+### Quick Start
 
 * **Anaconda :** [instructions](https://docs.anaconda.com/anaconda/install/linux/)
 * **Conda :** [instructions](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
@@ -166,7 +166,7 @@ sudo apt-get install python3.8
 
 * [Installers for Mac](https://www.python.org/downloads/macos/) and [installation instructions](https://www.dataquest.io/blog/installing-python-on-mac/).
 
-### Python packages
+### Python Packages
 
 * [Installation instructions for Jupyter](https://jupyter.org/install)
 
@@ -313,7 +313,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-bezda - bezda.management@gmail.com
+Anas Bouzid - anasbouzid@gmail.com
 
 Project Link: [https://github.com/bouzidanas/bouzidanas.github.io](https://github.com/bezda-analytics/bezda-analytics.github.io)
 
