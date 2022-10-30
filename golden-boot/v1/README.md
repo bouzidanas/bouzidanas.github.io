@@ -45,9 +45,9 @@
     <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/">View Demo</a>
+    <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/"><strong>View Demo<</strong>/a>
     ·
-    <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base/Golden-Boot-Plot-Generator.ipynb">View Plot Generator</a>
+    <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base/Golden-Boot-Plot-Generator.ipynb"><strong>View Plot Generator</strong></a>
   </p>
 </div>
 
@@ -92,7 +92,7 @@
 <br />
 <br />
 
-<p align="center"> ⯈ <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/" >View Demo</a> ⯇</p><br />
+<p align="center"> > <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/" ><strong>View Demo</strong></a> < </p><br />
 
  This Jupyter notebook project obtains data (from [FBRef.com](https://fbref.com/en/comps/9/Premier-League-Stats)) on the goals scored by each Premier League Golden Boot winner during the season the winner won the award. Then the data is used to generate running totals/cumulative sums plots so that the winner's goal scoring trajectories can be compared. <br />
 
