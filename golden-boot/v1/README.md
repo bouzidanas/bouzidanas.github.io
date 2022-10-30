@@ -45,7 +45,7 @@
     <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/"><strong>View Demo<</strong>/a>
+    <a href="https://bouzidanas.github.io/golden-boot/v1/Haaland/"><strong>View Demo<</strong></a>
     ·
     <a href="https://github.com/bouzidanas/bouzidanas.github.io/tree/main/golden-boot/v1/Base/Golden-Boot-Plot-Generator.ipynb"><strong>View Plot Generator</strong></a>
   </p>
